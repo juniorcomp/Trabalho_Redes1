@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:black;
+
+}
+
+/* cor alternativa #59316B */
+
+/* Header Styles */
+
+.header {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    border-bottom: 0.3rem solid #9a0ed1;
+}
+
+.header .logo {
+    font-size: 15px;
+    color: #9a0ed1;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center;
+}
+
+.navbar ul a {
+    text-decoration: none;
+}
+
+.navbar ul.nav-list li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+    position: relative; 
+}
+
+.navbar ul.nav-list li a:hover {
+    color: #9a0ed1
+}
+
+.navbar ul.nav-list li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background-color: #9a0ed1;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar ul.nav-list li a:hover::after {
+    width: 100%;
+}
+
+/* HomePage Styles */
+
+.homepage {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 4rem;
+}
+
+.homepage h1 {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+.homepage h2, h3 {
+    font-size: 30px;
+    color: #9a0ed1;
+    text-align: center;
+}
+
+.nome-alunos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: space-between;
+    gap: 5rem;
+}
+
+.nome-alunos {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.aluno {
+    background-color: black;
+    color: #9a0ed1;
+    padding: 3rem;
+    border-radius: 2rem;
+    gap: 2rem;
+    
+    /* Estilo neon */
+    box-shadow:
+      0 0 5px #9a0ed1,
+      0 0 5px #9a0ed1,
+      0 0 10px #9a0ed1,
+      0 0 20px #9a0ed1;
+  
+    /* Efeito 3D */
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Animação ao passar o mouse */
+  .aluno:hover {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
+    box-shadow:
+      0 0 5px #9a0ed1,
+      0 0 10px #9a0ed1,
+      0 0 20px #9a0ed1,
+      0 0 40px #9a0ed1;
+  }
+
+.change-page {
+    background-color: #9a0ed1;
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 10px #9a0ed1, 0 0 20px #9a0ed1;
+}
+
+.change-page a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
