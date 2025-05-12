@@ -95,6 +95,12 @@ body {
     text-align: center;
 }
 
+.homepage p {
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-align: center;
+}
+
 .nome-alunos {
     display: flex;
     justify-content: center;
@@ -140,17 +146,25 @@ body {
 
 .change-page {
     background-color: #9a0ed1;
-    color: black;
+    color: white; /* branco para bom contraste */
     padding: 1rem 2rem;
+    border: none; /* remove qualquer borda */
     border-radius: 2rem;
-    text-decoration: none;
     font-size: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 0 10px #9a0ed1, 0 0 20px #9a0ed1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #9a0ed1;
+    display: inline-block;
+    cursor: pointer;
+}
+.change-page:hover {
+    background-color: #b236f0;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #b236f0, 0 0 25px #b236f0;
 }
 
 .change-page a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 20px;
 }
