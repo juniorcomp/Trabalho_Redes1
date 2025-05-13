@@ -1,24 +1,25 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
     background-color:black;
-
 }
 
 /* cor alternativa #59316B */
 
-/* Header Styles */
+/* Header*/
 
 .header {
     background-color: black;
     color: white;
-    padding: 2rem;
+    padding: 2rem; 
     border-bottom: 0.3rem solid #9a0ed1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .header .logo {
@@ -70,17 +71,19 @@ body {
     width: 100%;
 }
 
-/* HomePage Styles */
+/* HomePage*/
 
 .homepage {
     font-family: Arial, sans-serif;
     padding: 20px;
+    padding-top: 12rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     gap: 4rem;
+    margin: 0 20rem;
 }
 
 .homepage h1 {
@@ -91,6 +94,12 @@ body {
 
 .homepage h2, h3 {
     font-size: 30px;
+    color: #9a0ed1;
+    text-align: center;
+}
+
+.homepage h4 {
+    font-size: 20px;
     color: #9a0ed1;
     text-align: center;
 }
@@ -122,19 +131,16 @@ body {
     border-radius: 2rem;
     gap: 2rem;
     
-    /* Estilo neon */
     box-shadow:
       0 0 5px #9a0ed1,
       0 0 5px #9a0ed1,
       0 0 10px #9a0ed1,
       0 0 20px #9a0ed1;
   
-    /* Efeito 3D */
     transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  /* Animação ao passar o mouse */
   .aluno:hover {
     transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
     box-shadow:
@@ -146,9 +152,9 @@ body {
 
 .change-page {
     background-color: #9a0ed1;
-    color: white; /* branco para bom contraste */
+    color: white;
     padding: 1rem 2rem;
-    border: none; /* remove qualquer borda */
+    border: none;
     border-radius: 2rem;
     font-size: 20px;
     text-decoration: none;
@@ -168,3 +174,4 @@ body {
     color: white;
     font-size: 20px;
 }
+
