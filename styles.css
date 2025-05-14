@@ -4,22 +4,36 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color:black;
+    background-color: black;
+    margin: 0;
+    padding: 0;
 }
 
-/* cor alternativa #59316B */
+html {
+    scroll-behavior: smooth;
+}
 
-/* Header*/
-
+/* Nav-Header */
 .header {
     background-color: black;
     color: white;
-    padding: 2rem; 
+    padding: 1rem 0;
     border-bottom: 0.3rem solid #9a0ed1;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo do header */
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
 }
 
 .header .logo {
@@ -30,16 +44,23 @@ body {
     gap: 5rem;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center ;
-    align-items: center;
+.navbar {
+    width: 100%;
 }
 
-.navbar ul a {
-    text-decoration: none;
+.navbar ul.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between; /* Distribui os itens igualmente */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar ul.nav-list li {
+    flex: 1;
+    text-align: center;
 }
 
 .navbar ul.nav-list li a {
@@ -48,19 +69,21 @@ body {
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 5px;
-    transition: color 0.3s ease;
-    position: relative; 
+    transition: all 0.3s ease;
+    position: relative;
+    display: block;
 }
 
 .navbar ul.nav-list li a:hover {
-    color: #9a0ed1
+    color: #9a0ed1;
 }
 
 .navbar ul.nav-list li a::after {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     height: 3px;
     width: 0;
     background-color: #9a0ed1;
@@ -68,88 +91,142 @@ body {
 }
 
 .navbar ul.nav-list li a:hover::after {
-    width: 100%;
+    width: 80%;
 }
 
-/* HomePage*/
-
+/* HomePage */
 .homepage {
     font-family: Arial, sans-serif;
-    padding: 20px;
-    padding-top: 12rem;
+    padding: 6rem 12rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    gap: 4rem;
-    margin: 0 20rem;
+    gap: 2rem;
+    background-color: #0a0a0a;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(154, 14, 209, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 75% 75%, rgba(204, 20, 221, 0.1) 0%, transparent 40%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .homepage h1 {
-    font-size: 50px;
+    font-size: 4.5rem;
     color: #fff;
-    text-align: center;
+    text-shadow: 0 0 3px #9a0ed1, 0 0 1px #9a0ed1, 0 0 5px #9a0ed1;
+    position: relative;
 }
 
-.homepage h2, h3 {
-    font-size: 30px;
+.homepage h2{
+    font-size: 2.2rem;
     color: #9a0ed1;
-    text-align: center;
 }
+
+ .homepage h3 {
+    font-size: 2rem;
+    color: #9a0ed1;
+ }
 
 .homepage h4 {
-    font-size: 20px;
+    font-size: 1.5rem;
     color: #9a0ed1;
-    text-align: center;
 }
-
 .homepage p {
     font-size: 1.3rem;
     color: #ffffff;
     text-align: center;
 }
 
-.nome-alunos {
+.group-name {
+    margin: 1.5rem 0;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    background: rgba(154, 14, 209, 0.15);
+    border: 1px solid rgb(183, 0, 255);
+    backdrop-filter: blur(5px);
+
+}
+
+/* Referência */
+.refer {
+    background-color: #ac41d6;
+    padding: 2rem;
+    color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-direction: space-between;
-    gap: 5rem;
+    gap: 2rem;
+    width: 100vw;
+    position: relative;
+    left: 0;
+}
+
+.refer h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.refer ol {
+    list-style-position: inside;
+    padding-left: 1rem;
+    max-width: 800px;
+    text-align: left;
+    width: 100%;
+}
+
+.refer li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.refer p {
+    margin: 0;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.refer ol a {
+    text-decoration: underline;
+    color: #ffffff9f;
+    font-weight: bold;
 }
 
 .nome-alunos {
-    list-style: none;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
 }
 
 .aluno {
     background-color: black;
     color: #9a0ed1;
-    padding: 3rem;
-    border-radius: 2rem;
-    gap: 2rem;
-    
-    box-shadow:
-      0 0 5px #9a0ed1,
-      0 0 5px #9a0ed1,
-      0 0 10px #9a0ed1,
-      0 0 20px #9a0ed1;
-  
+    padding: 1.2rem 2rem;
+    border: 1px solid rgba(154, 14, 209, 0.5);    
+    border-radius: 1rem;
     transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .aluno:hover {
-    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
-    box-shadow:
-      0 0 5px #9a0ed1,
-      0 0 10px #9a0ed1,
-      0 0 20px #9a0ed1,
-      0 0 40px #9a0ed1;
-  }
+    min-width: 250px;
+    backdrop-filter: blur(5px);
+}
 
+.aluno:hover {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
+    box-shadow: 0 0 5px #9a0ed1, 0 0 10px #9a0ed1, 0 0 20px #9a0ed1, 0 0 40px #9a0ed1;
+}
+
+.aluno li {
+    font-size: 1.2rem;
+    color: white;
+    list-style: none;
+}
+
+/* Botão */
 .change-page {
     background-color: #9a0ed1;
     color: white;
@@ -160,9 +237,13 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 0 10px #9a0ed1;
-    display: inline-block;
     cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
+
 .change-page:hover {
     background-color: #b236f0;
     transform: scale(1.05);
@@ -175,3 +256,27 @@ body {
     font-size: 20px;
 }
 
+/* Botão seta */
+.arrow {
+    animation: bounce 2s infinite;
+}
+
+.arrow-down {
+    animation: bounce 2s infinite;
+}
+
+.arrow-up {
+    animation: float-up 2s infinite;
+}
+
+@keyframes float-up {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(5px); }
+    60% { transform: translateY(3px); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
