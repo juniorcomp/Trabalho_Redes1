@@ -267,6 +267,14 @@ html {
 
 }
 
+/* acesso ao tor */
+.img-navtor {
+  max-width: 600px; /* Define a largura máxima para todas as imagens da classe */
+  height: auto;     /* Garante que a altura seja ajustada proporcionalmente à largura */
+  display: block;   /* Remove espaço extra que pode aparecer abaixo da imagem */
+  margin: 0 auto;   /* Centraliza a imagem se ela for menor que o espaço disponível */
+}
+
 /* Referência */
 .refer {
     background-color: #ac41d6;
