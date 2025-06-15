@@ -240,37 +240,32 @@
                 </p>
                 
                 <h3>Segundo salto</h3>
-                <p> 
-                    Para adicionar o segundo relay ao circuito, o cliente não precisa se comunicar diretamente com o nó em questão. Em vez disso, ele envia uma <br><strong>célula de controle relay extend</strong> 
+                <p> Para adicionar o segundo relay ao circuito, o cliente não precisa se comunicar diretamente com o nó em questão. Em vez disso, ele envia uma <br><strong>célula de controle relay extend</strong> 
                     através do túnel já criptografado para o primeiro nó. Essa célula relay extend instrui ao primeiro nó a encaminhar uma nova solicitação <br><strong>create</strong> para o segundo nó escolhido. 
                     O payload do relay extend tem o endereço do segundo nó e uma nova metade do handshake, gx2, onde somente o segundo nó pode descriptografar. 
                     Assim, o segundo nó responde com uma <br><strong>célula created</strong> com a outra metade do handshake ao primeiro nó, que por sua vez o encapsula em uma célula relay extended enviando de volta
-                    para o cliente pelo túnel. Agora, o cliente e o segundo nó tem uma chave secreta de sessão compartilhada que o primeiro nó não conhece.
-                </p>
+                    para o cliente pelo túnel. Agora, o cliente e o segundo nó tem uma chave secreta de sessão compartilhada que o primeiro nó não conhece. </p>
                 <h3>Terceiro salto</h3>
-                <p>
-                    No terceiro salto, o processo é o mesmo que ocorre para o segundo salto o cliente envia uma célula relay extend através do túnel que agora tem dois saltos, e o segundo nó é instruído a enviar 
+                <p> No terceiro salto, o processo é o mesmo que ocorre para o segundo salto o cliente envia uma célula relay extend através do túnel que agora tem dois saltos, e o segundo nó é instruído a enviar 
                     uma solicitação create. Nesse sentido, haverá a troca das metades do handshakes e consequentemente vão compartilhar uma chave de sessão secreta, e, dessa forma o cliente compartilhará três chaves 
-                    secretas, um para cada nó do circuito.
-                </p>
-                <h2>Função dos relays</h2>
-                <p></p>
-                <h3>Guard Relay</h3>
-                <p>
+                    secretas, um para cada nó do circuito. </p>
+                
+                <h3>Diretório de Autoridade</h3>
+                <p> Os diretórios de Autoridades (DA's) são um pequeno conjunto de servidores especiais que tem funções como fornecer uma lista atualizada do nós disponíveis. 
                     
                 </p>
-                <h3>Middle Relay</h3>
-                <p></p>
-                <h3>Exit Relay</h3>
-                <p></p>
+
 
                 <h2>Criptografia</h2>
                 <h2>Troca de chaves</h2>
-                <p>Como cada relay recebe as suas respectivas chaves para descriptografar a sua camada de criptografia e conseguir se comunicar com os outros relays?
-                   Isso ocorre, basicamente, por meio de um método criptográfico, Troca de Chaves de Diffie-Hellman, o qual
-                   permite que duas partes consigam estabelecer uma chave de criptografia simétrica e secreta entre os relays da rede em um canal de comunicação não seguro,
-                   essa troca de chaves é feita sem que a chave seja efetivamente transmitida diretamente. Então, esse processo garante que mesmo que um invasor intercepte
-                   a comunicação, ele não poderá decifrar nada do conteúdo do fluxo de dados.</p>
+                <p> Como cada relay recebe as suas respectivas chaves para descriptografar a sua camada de criptografia e conseguir se comunicar com os outros relays?
+                    Isso ocorre, basicamente, por meio de um método criptográfico, Troca de Chaves de Diffie-Hellman, o qual permite que duas partes consigam estabelecer 
+                    uma chave de criptografia simétrica e secreta entre os relays da rede em um canal de comunicação não seguro, essa troca de chaves é feita sem que a 
+                    chave seja efetivamente transmitida diretamente. Então, esse processo garante que mesmo que um invasor intercepte a comunicação, ele não poderá decifrar 
+                    nada do conteúdo do fluxo de dados. Uma boa analogia é a da mistura de tintas: imagine que você e um relay concordam em usar uma cor pública (ex: amarela). 
+                    Você adiciona uma cor secreta sua (ex: vermelha), criando uma mistura laranja que você envia publicamente. O relay faz o mesmo com a cor secreta dele (ex: azul), 
+                    criando uma mistura verde. Ao receber a mistura um do outro, cada um adiciona novamente a sua própria cor secreta. Ambos chegarão à mesma cor final (marrom), que 
+                    é a chave secreta, sem nunca terem transmitido essa cor final pela rede.</p>
                 <div>
                 <button class="change-page">
                     <a href="#acess">
