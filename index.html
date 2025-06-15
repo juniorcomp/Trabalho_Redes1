@@ -250,11 +250,16 @@
                     uma solicitação create. Nesse sentido, haverá a troca das metades do handshakes e consequentemente vão compartilhar uma chave de sessão secreta, e, dessa forma o cliente compartilhará três chaves 
                     secretas, um para cada nó do circuito. </p>
                 
-                <h3>Diretório de Autoridade</h3>
-                <p> Os diretórios de Autoridades (DA's) são um pequeno conjunto de servidores especiais que tem funções como fornecer uma lista atualizada do nós disponíveis. 
-                    
+                <h2>Diretório de Autoridade</h2>
+                <p> <br><strong>Os diretórios de Autoridades</strong> (DA's) são um pequeno conjunto de servidores especiais, agem como servidores HTTP, que tem como função principal fornecer uma lista atualizada do 
+                    nós disponíveis, sua largura de banda e política de saída. Esse método centraliza a confiança do sistema para esse conjunto de servidores, uma vez que o cliente não precisa confiar nos milhares de nós 
+                    individualmente, ele só precisa confiar nas DA's que não são maliciosas. Apesar dessa centralização, as informações são verificadas através de um processo de votação distribuído e a partir disso 
+                    e criado o documento de consenso. Nos mecanismos de consenso, é incluído o registro de nó, quando o nó entra online é enviado por ele um "descritor de servidor" para cada um dos Diretórios 
+                    de Autoridades. Esse descritor tem todas as informações essenciais sobre o relay, bem como as chaves públicas, endereço IP, portas, largura de banda e política de saída. A cada hora, cada DA verifica 
+                    a sua lista de descritores e realiza testes de alcançabilidade averiguando os nós que estão online. A partir disso, cada DA publica um "voto" assinado, o qual mostra como está o estado da rede para ele,  
+                    nesse sentido, cada DA baixa os "votos" dos outros diretórios e combina-os fazendo uma média ponderada e assim calcula-se o Documento de Consenso, é claro que esse documento ainda precisa ser 
+                    considerado válido, e para isso, é necessário que ele seja assinado pela maioria dos diretórios. Por fim, esse documento é publicado e disponibilizado para que os clientes e nós possam baixar-lo.
                 </p>
-
 
                 <h2>Criptografia</h2>
                 <h2>Troca de chaves</h2>
