@@ -223,6 +223,7 @@
                 </div>   
             </div>
             <div class="homepage" id="aplication">
+                
                 <h1>Roteamento cebola</h1>
                 <p>Explicar como é esbelecido o CIRCUITO e criar sub titulos para as funcoes dos nós(guard, middle e exit)</p>
                 
@@ -241,12 +242,21 @@
                 <h3>Segundo salto</h3>
                 <p> 
                     Para adicionar o segundo relay ao circuito, o cliente não precisa se comunicar diretamente com o nó em questão. Em vez disso, ele envia uma <br><strong>célula de controle relay extend</strong> 
-                    através do túnel já criptografado para o primeiro nó. 
+                    através do túnel já criptografado para o primeiro nó. Essa célula relay extend instrui ao primeiro nó a encaminhar uma nova solicitação <br><strong>create</strong> para o segundo nó escolhido. 
+                    O payload do relay extend tem o endereço do segundo nó e uma nova metade do handshake, gx2, onde somente o segundo nó pode descriptografar. 
+                    Assim, o segundo nó responde com uma <br><strong>célula created</strong> com a outra metade do handshake ao primeiro nó, que por sua vez o encapsula em uma célula relay extended enviando de volta
+                    para o cliente pelo túnel. Agora, o cliente e o segundo nó tem uma chave secreta de sessão compartilhada que o primeiro nó não conhece.
+                </p>
+                <h3>Terceiro salto</h3>
+                <p>
+                    
                 </p>
                 <h2>Função dos relays</h2>
                 <p></p>
                 <h3>Guard Relay</h3>
-                <p></p>
+                <p>
+                    
+                </p>
                 <h3>Middle Relay</h3>
                 <p></p>
                 <h3>Exit Relay</h3>
