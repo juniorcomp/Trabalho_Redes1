@@ -266,11 +266,14 @@
 
                 <h2>Criptografia</h2>
                 <h2>Troca de chaves</h2>
-                <p>Como cada relay recebe as suas respectivas chaves para descriptografar a sua camada de criptografia e conseguir se comunicar com os outros relays?
-                   Isso ocorre, basicamente, por meio de um método criptográfico, Troca de Chaves de Diffie-Hellman, o qual
-                   permite que duas partes consigam estabelecer uma chave de criptografia simétrica e secreta entre os relays da rede em um canal de comunicação não seguro,
-                   essa troca de chaves é feita sem que a chave seja efetivamente transmitida diretamente. Então, esse processo garante que mesmo que um invasor intercepte
-                   a comunicação, ele não poderá decifrar nada do conteúdo do fluxo de dados.</p>
+                <p> Como cada relay recebe as suas respectivas chaves para descriptografar a sua camada de criptografia e conseguir se comunicar com os outros relays?
+                    Isso ocorre, basicamente, por meio de um método criptográfico, Troca de Chaves de Diffie-Hellman, o qual permite que duas partes consigam estabelecer 
+                    uma chave de criptografia simétrica e secreta entre os relays da rede em um canal de comunicação não seguro, essa troca de chaves é feita sem que a 
+                    chave seja efetivamente transmitida diretamente. Então, esse processo garante que mesmo que um invasor intercepte a comunicação, ele não poderá decifrar 
+                    nada do conteúdo do fluxo de dados. Uma boa analogia é a da mistura de tintas: imagine que você e um relay concordam em usar uma cor pública (ex: amarela). 
+                    Você adiciona uma cor secreta sua (ex: vermelha), criando uma mistura laranja que você envia publicamente. O relay faz o mesmo com a cor secreta dele (ex: azul), 
+                    criando uma mistura verde. Ao receber a mistura um do outro, cada um adiciona novamente a sua própria cor secreta. Ambos chegarão à mesma cor final (marrom), que 
+                    é a chave secreta, sem nunca terem transmitido essa cor final pela rede.</p>
                 <div>
                 <button class="change-page">
                     <a href="#acess">
