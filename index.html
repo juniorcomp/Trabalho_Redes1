@@ -148,22 +148,32 @@
                 </div>           
             </div>
             <div class="homepage acess" id="acess">
-                <h1>Acesso ao TOR</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit distinctio quaerat, 
-                    delectus, et veritatis sed quod suscipit corrupti nesciunt numquam, officia adipisci
-                    veniam incidunt aut. Qui, soluta laborum. Corrupti, totam.</p>
-                <h2>Conhecendo Tor</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit distinctio quaerat, 
-                    delectus, et veritatis sed quod suscipit corrupti nesciunt numquam, officia adipisci
-                    veniam incidunt aut. Qui, soluta laborum. Corrupti, totam.</p>                    
-                <h2>Ferramentas</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit distinctio quaerat, 
-                    delectus, et veritatis sed quod suscipit corrupti nesciunt numquam, officia adipisci
-                    veniam incidunt aut. Qui, soluta laborum. Corrupti, totam.</p>
-                <h2>Primeiro Passos</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit distinctio quaerat, 
-                    delectus, et veritatis sed quod suscipit corrupti nesciunt numquam, officia adipisci
-                    veniam incidunt aut. Qui, soluta laborum. Corrupti, totam.</p>
+<h1>Acesso ao TOR</h1>
+        <p>Para acessar ao TOR browser, basta acessar ao site deles 
+            (<strong><a href="https://www.torproject.org/download/" target="_blank">https://www.torproject.org/download/</a></strong>) 
+            e fazer o download de acordo com o seu sistema operacional como qualquer outro browser. É gratuito e de código aberto.</p>
+
+        <h2>Conhecendo o Tor</h2>
+        <p>O Tor (The Onion Router) é uma rede e um navegador projetado para proteger sua privacidade e anonimato online. 
+            Ele funciona enviando sua conexão de internet através de uma série de três servidores voluntários ao redor do mundo, 
+            conhecidos como "nós" ou "relés". Cada passo é criptografado, como as camadas de uma cebola, tornando extremamente 
+            difícil para qualquer um rastrear sua atividade online de volta para você, seja seu provedor de internet, sites visitados 
+            ou vigilância.</p>           
+
+        <h2>Ferramentas</h2>
+        <p>A principal ferramenta é o próprio <strong>Navegador Tor</strong>, uma versão modificada do Firefox com múltiplas camadas de 
+            segurança. Ele vem pré-configurado com extensões como NoScript e HTTPS-Everywhere para bloquear scripts maliciosos e forçar 
+            conexões criptografadas. Outra "ferramenta" fundamental são os <strong>Serviços Onion</strong> (sites .onion), que são sites 
+            que só podem ser acessados através da rede Tor, oferecendo anonimato tanto para quem visita quanto para quem hospeda o conteúdo.</p>
+
+        <h2>Primeiros Passos</h2>
+        <p>Após instalar e abrir o Navegador Tor, você verá uma janela para se conectar.
+            <br><strong>1. Conexão Simples:</strong> Na maioria dos casos, basta clicar no botão "Conectar". 
+            O navegador encontrará um caminho seguro para a rede e se conectará automaticamente.
+            <br><strong>2. Conexão com Pontes (Bridges):</strong> Se você estiver em um país ou rede que bloqueia o acesso ao Tor, 
+            clique em "Configurar Conexão". Nesta seção, você pode solicitar e usar "pontes", que são pontos de entrada não listados publicamente, para contornar a censura.
+            <br><strong>3. Níveis de Segurança:</strong> No ícone de escudo, você pode ajustar o nível de segurança (Padrão, Mais Seguro, O Mais Seguro) 
+            para desativar funcionalidades que podem ser exploradas, como certos tipos de JavaScript.</p>
                 <div>
                 <button class="change-page">
                     <a href="#intro">
@@ -198,7 +208,11 @@
                     veniam incidunt aut. Qui, soluta laborum. Corrupti, totam.</p>
                 <h2>Criptografia</h2>
                 <h2>Troca de chaves</h2>
-                <p>Logaritmo discreto</p>
+                <p>Como cada relay recebe as suas respectivas chaves para descriptografar a sua camada de criptografia e conseguir se comunicar com os outros relays?
+                   Isso ocorre, basicamente, por meio de um método criptográfico, Troca de Chaves de Diffie-Hellman, o qual
+                   permite que duas partes consigam estabelecer uma chave de criptografia simétrica e secreta entre os relays da rede em um canal de comunicação não seguro,
+                   essa troca de chaves é feita sem que a chave seja efetivamente transmitida diretamente. Então, esse processo garante que mesmo que um invasor intercepte
+                   a comunicação, ele não poderá decifrar nada do conteúdo do fluxo de dados.</p>
                 <div>
                 <button class="change-page">
                     <a href="#acess">
