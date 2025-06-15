@@ -226,11 +226,23 @@
                 <h1>Roteamento cebola</h1>
                 <p>Explicar como é esbelecido o CIRCUITO e criar sub titulos para as funcoes dos nós(guard, middle e exit)</p>
                 
-                <h2>Estabelecendo o cirtuito.</h2>
-                <p>
-                    
+                <h2>Estabelecendo o cirtuito</h2>
+                <p> O Tor implementa um método de construção de circuito incremental, conhecido como telescópio. A construção ocorre a um salto (hop)
+                    de cada vez, assim o cliente poderá verificar a cada etapa se o processo foi concluído com êxito. Em termos de segurança e confiabilidade 
+                    esse método atual é superior ao  método antigo que construía a "cebola" criptográfica de uma vez só.
+                </p>
+                <h3>Primeiro salto (Hop)</h3>
+                <p> O cliente seleciona um nó de guarda e envia para ele uma <br><strong>célula de controle create</strong>. O payload desta célula tem a primeira metade do handshake Diffie-Hellman
+                    especificamente o gx, que é criptografado com a chave de cebola pública do nó de guarda. O nó de guarda responde com uma <br><strong>célula created</strong>, a qual tem a outra metade 
+                    do handshake, gy, juntamente com um hash da chave de sessão simétrica resultante, <br><strong>K1 = gxy</strong>. Agora, o cliente e o nó de entrada compartilham uma chave de sessão 
+                    secreta e efêmera/temporária e essa chave criptografará todas as comunicações futuras!
                 </p>
                 
+                <h3>Segundo salto</h3>
+                <p> 
+                    Para adicionar o segundo relay ao circuito, o cliente não precisa se comunicar diretamente com o nó em questão. Em vez disso, ele envia uma <br><strong>célula de controle relay extend</strong> 
+                    através do túnel já criptografado para o primeiro nó. 
+                </p>
                 <h2>Função dos relays</h2>
                 <p></p>
                 <h3>Guard Relay</h3>
@@ -240,7 +252,6 @@
                 <h3>Exit Relay</h3>
                 <p></p>
 
-                
                 <h2>Criptografia</h2>
                 <h2>Troca de chaves</h2>
                 <p>Como cada relay recebe as suas respectivas chaves para descriptografar a sua camada de criptografia e conseguir se comunicar com os outros relays?
